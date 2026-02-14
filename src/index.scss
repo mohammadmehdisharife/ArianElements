@@ -1,9 +1,9 @@
 @font-face {
   font-family: "Vazir";
   src:
-    url("../public/fonts/Vazir.woff2") format("woff2"),
-    url("../public/fonts/Vazir.woff") format("woff"),
-    url("../public/fonts/Vazir.ttf") format("truetype");
+    url("/fonts/Vazir.woff2") format("woff2"),
+    url("/fonts/Vazir.woff") format("woff"),
+    url("/fonts/Vazir.ttf") format("truetype");
   font-weight: normal;
   font-style: normal;
   font-display: swap;
@@ -12,9 +12,9 @@
 @font-face {
   font-family: "Vazir";
   src:
-    url("../public/fonts/Vazir-Bold.woff2") format("woff2"),
-    url("../public/fonts/Vazir-Bold.woff") format("woff"),
-    url("../public/fonts/Vazir-Bold.ttf") format("truetype");
+    url("/fonts/Vazir-Bold.woff2") format("woff2"),
+    url("/fonts/Vazir-Bold.woff") format("woff"),
+    url("/fonts/Vazir-Bold.ttf") format("truetype");
   font-weight: bold;
   font-style: normal;
   font-display: swap;
@@ -23,9 +23,9 @@
 @font-face {
   font-family: "Vazir";
   src:
-    url("../public/fonts/Vazir-Light.woff2") format("woff2"),
-    url("../public/fonts/Vazir-Light.woff") format("woff"),
-    url("../public/fonts/Vazir-Light.ttf") format("truetype");
+    url("/fonts/Vazir-Light.woff2") format("woff2"),
+    url("/fonts/Vazir-Light.woff") format("woff"),
+    url("/fonts/Vazir-Light.ttf") format("truetype");
   font-weight: 300;
   font-style: normal;
   font-display: swap;
@@ -34,9 +34,9 @@
 @font-face {
   font-family: "Vazir";
   src:
-    url("../public/fonts/Vazir-Medium.woff2") format("woff2"),
-    url("../public/fonts/Vazir-Medium.woff") format("woff"),
-    url("../public/fonts/Vazir-Medium.ttf") format("truetype");
+    url("/fonts/Vazir-Medium.woff2") format("woff2"),
+    url("/fonts/Vazir-Medium.woff") format("woff"),
+    url("/fonts/Vazir-Medium.ttf") format("truetype");
   font-weight: 500;
   font-style: normal;
   font-display: swap;

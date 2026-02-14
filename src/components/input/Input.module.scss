@@ -1,0 +1,44 @@
+@use '../colors' as *;
+
+.input {
+    padding: 8px 12px;
+    border: 2px solid;
+    border-radius: 5px;
+    font-size: 16px;
+    outline: none;
+    transition: all 0.3s ease;
+    background-color: $light;
+    text-align: right;
+}
+
+.blue {
+    border-color: $blue;
+    &:focus {
+        border-color: $blue-dark;
+        box-shadow: 0 0 0 3px rgba($blue, 0.2);
+    }
+}
+
+.red {
+    border-color: $red;
+    &:focus {
+        border-color: $red-dark;
+        box-shadow: 0 0 0 3px rgba($red, 0.2);
+    }
+}
+
+.green {
+    border-color: $green;
+    &:focus {
+        border-color: $green-dark;
+        box-shadow: 0 0 0 3px rgba($green, 0.2);
+    }
+}
+
+.yellow {
+    border-color: $yellow;
+    &:focus {
+        border-color: $yellow-dark;
+        box-shadow: 0 0 0 3px rgba($yellow, 0.2);
+    }
+}
