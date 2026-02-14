@@ -1,0 +1,22 @@
+@use '../colors' as *;
+
+.text {
+    margin: 0;
+    padding: 0;
+    text-align: right;
+    line-height: 1.6;
+}
+
+.dark { color: $dark; }
+.light { color: $light; }
+.blue { color: $blue; }
+.red { color: $red; }
+.green { color: $green; }
+.yellow { color: $yellow; }
+
+.size-sm { font-size: 14px; }
+.size-md { font-size: 16px; }
+.size-lg { font-size: 18px; }
+.size-xl { font-size: 20px; }
+
+.fade { opacity: 0.7; }
