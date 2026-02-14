@@ -1,0 +1,113 @@
+@use '../colors' as *;
+
+.card {
+    position: relative;
+    background: #ffffff;
+    border-radius: 16px;
+    padding: 16px;
+    box-shadow: 
+        0 4px 12px -4px rgba(0, 0, 0, 0.1),
+        0 0 0 1px rgba(0, 0, 0, 0.02);
+    transition: all 0.2s ease;
+    overflow: hidden;
+    
+    &::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        height: 100%;
+        background: linear-gradient(
+            115deg,
+            rgba(255, 255, 255, 0.2) 0%,
+            rgba(255, 255, 255, 0) 30%,
+            rgba(255, 255, 255, 0) 70%,
+            rgba(255, 255, 255, 0.05) 100%
+        );
+        opacity: 0;
+        transition: opacity 0.2s ease;
+        pointer-events: none;
+    }
+    
+    &::after {
+        content: '';
+        position: absolute;
+        inset: 0;
+        border-radius: 16px;
+        padding: 1px;
+        background: linear-gradient(145deg, transparent, rgba(59, 130, 246, 0.15), transparent);
+        -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+        mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+        -webkit-mask-composite: xor;
+        mask-composite: exclude;
+        opacity: 0;
+        transition: opacity 0.2s ease;
+        pointer-events: none;
+    }
+    
+    &:hover {
+        transform: translateY(-2px);
+        box-shadow: 
+            0 8px 16px -6px rgba(0, 0, 0, 0.15),
+            0 0 0 1px rgba(59, 130, 246, 0.1);
+        
+        &::before {
+            opacity: 0.3;
+        }
+        
+        &::after {
+            opacity: 1;
+        }
+    }
+    
+    &:active {
+        transform: translateY(-1px);
+        transition: all 0.1s ease;
+    }
+}
+
+// رنگ‌ها
+.blue {
+    &:hover {
+        box-shadow: 
+            0 8px 16px -6px rgba($blue, 0.2),
+            0 0 0 1px rgba($blue, 0.1);
+    }
+    &::after {
+        background: linear-gradient(145deg, transparent, rgba($blue, 0.15), transparent);
+    }
+}
+
+.red {
+    &:hover {
+        box-shadow: 
+            0 8px 16px -6px rgba($red, 0.2),
+            0 0 0 1px rgba($red, 0.1);
+    }
+    &::after {
+        background: linear-gradient(145deg, transparent, rgba($red, 0.15), transparent);
+    }
+}
+
+.green {
+    &:hover {
+        box-shadow: 
+            0 8px 16px -6px rgba($green, 0.2),
+            0 0 0 1px rgba($green, 0.1);
+    }
+    &::after {
+        background: linear-gradient(145deg, transparent, rgba($green, 0.15), transparent);
+    }
+}
+
+.yellow {
+    &:hover {
+        box-shadow: 
+            0 8px 16px -6px rgba($yellow, 0.2),
+            0 0 0 1px rgba($yellow, 0.1);
+    }
+    &::after {
+        background: linear-gradient(145deg, transparent, rgba($yellow, 0.15), transparent);
+    }
+}
