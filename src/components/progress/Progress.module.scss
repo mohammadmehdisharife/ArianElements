@@ -1,0 +1,220 @@
+@use '../colors' as *;
+@use 'sass:color';
+
+.progress {
+    position: relative;
+    width: 100%;
+    background: rgba($gray, 0.1);
+    border-radius: 100px;
+    overflow: hidden;
+    direction: ltr;
+    
+    // خطوط راه‌راه منظم و یکدست
+    background-image: repeating-linear-gradient(
+        45deg,
+        rgba($gray, 0.15) 0px,
+        rgba($gray, 0.15) 8px,
+        transparent 8px,
+        transparent 16px
+    );
+    background-size: 23px 23px;
+    
+    // سایه داخلی ملایم
+    box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1);
+    
+    // انیمیشن برای پس‌زمینه
+    animation: bgPulse 3s ease-in-out infinite;
+}
+
+.bar {
+    position: relative;
+    height: 100%;
+    border-radius: 100px;
+    transition: width 0.8s cubic-bezier(0.34, 1.56, 0.64, 1);
+    
+    // خطوط راه‌راه روی نوار پیشرفت - منظم و سیستمی
+    background-image: repeating-linear-gradient(
+        45deg,
+        rgba(255, 255, 255, 0.25) 0px,
+        rgba(255, 255, 255, 0.25) 8px,
+        transparent 8px,
+        transparent 16px
+    );
+    background-size: 23px 23px;
+    
+    // انیمیشن حرکت خطوط
+    animation: moveStripes 20s linear infinite;
+    
+    // انیمیشن درخشش
+    &::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: linear-gradient(
+            90deg,
+            transparent,
+            rgba(255, 255, 255, 0.2),
+            transparent
+        );
+        animation: shine 3s ease-in-out infinite;
+        pointer-events: none;
+    }
+    
+    // هایلایت بالای نوار
+    &::after {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        height: 1px;
+        background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.4), transparent);
+        animation: highlightMove 2.5s ease-in-out infinite;
+    }
+    
+    // انیمیشن ضربان برای نوار
+    animation: barPulse 2s ease-in-out infinite;
+}
+
+// رنگ‌ها با انیمیشن سایه
+.blue {
+    background-color: $blue;
+    box-shadow: 0 0 8px rgba($blue, 0.4);
+    animation: glowBlue 2s ease-in-out infinite;
+}
+
+.red {
+    background-color: $red;
+    box-shadow: 0 0 8px rgba($red, 0.4);
+    animation: glowRed 2s ease-in-out infinite;
+}
+
+.green {
+    background-color: $green;
+    box-shadow: 0 0 8px rgba($green, 0.4);
+    animation: glowGreen 2s ease-in-out infinite;
+}
+
+.yellow {
+    background-color: $yellow;
+    box-shadow: 0 0 8px rgba($yellow, 0.4);
+    animation: glowYellow 2s ease-in-out infinite;
+}
+
+// سایزها
+.sm {
+    height: 8px;
+}
+
+.md {
+    height: 11px;
+}
+
+.lg {
+    height: 14px;
+}
+
+.xl {
+    height: 18px;
+}
+
+// انیمیشن‌های پیشرفته
+@keyframes moveStripes {
+    0% {
+        background-position: 0 0;
+    }
+    100% {
+        background-position: 46px 0;
+    }
+}
+
+@keyframes shine {
+    0% {
+        transform: translateX(-100%);
+    }
+    20%, 100% {
+        transform: translateX(100%);
+    }
+}
+
+@keyframes highlightMove {
+    0%, 100% {
+        opacity: 0.3;
+        transform: scaleX(0.8);
+    }
+    50% {
+        opacity: 0.8;
+        transform: scaleX(1);
+    }
+}
+
+@keyframes bgPulse {
+    0%, 100% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0.95;
+    }
+}
+
+@keyframes barPulse {
+    0%, 100% {
+        transform: scaleY(1);
+    }
+    50% {
+        transform: scaleY(1.02);
+    }
+}
+
+// انیمیشن‌های درخشش برای هر رنگ
+@keyframes glowBlue {
+    0%, 100% {
+        box-shadow: 0 0 8px rgba($blue, 0.4);
+    }
+    50% {
+        box-shadow: 0 0 15px rgba($blue, 0.6);
+    }
+}
+
+@keyframes glowRed {
+    0%, 100% {
+        box-shadow: 0 0 8px rgba($red, 0.4);
+    }
+    50% {
+        box-shadow: 0 0 15px rgba($red, 0.6);
+    }
+}
+
+@keyframes glowGreen {
+    0%, 100% {
+        box-shadow: 0 0 8px rgba($green, 0.4);
+    }
+    50% {
+        box-shadow: 0 0 15px rgba($green, 0.6);
+    }
+}
+
+@keyframes glowYellow {
+    0%, 100% {
+        box-shadow: 0 0 8px rgba($yellow, 0.4);
+    }
+    50% {
+        box-shadow: 0 0 15px rgba($yellow, 0.6);
+    }
+}
+
+// افکت هاور - انیمیشن سریع‌تر
+.progress:hover {
+    .bar {
+        animation: 
+            moveStripes 10s linear infinite,
+            barPulse 1.5s ease-in-out infinite;
+        
+        &::before {
+            animation: shine 2s ease-in-out infinite;
+        }
+    }
+}
