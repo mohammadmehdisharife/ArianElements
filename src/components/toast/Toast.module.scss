@@ -7,6 +7,7 @@
     z-index: 9999;
     cursor: pointer;
     animation: slideUp 0.3s ease;
+    user-select: none;
 }
 
 @keyframes slideUp {
