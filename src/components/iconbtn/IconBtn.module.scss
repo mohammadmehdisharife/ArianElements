@@ -1,0 +1,121 @@
+@use '../colors' as *;
+
+// سایزهای مختلف برای دکمه آیکونی
+$sizes: (
+    sm: 32px,
+    md: 40px,
+    lg: 48px,
+    xl: 56px
+);
+
+.iconBtn {
+    // ویژگی‌های پایه
+    border: none;
+    outline: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    
+    // ویژگی‌های مربعی بودن
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    
+    // حذف padding پیش‌فرض و تنظیم ابعاد مربعی
+    padding: 0;
+    
+    // استایل آیکون داخل دکمه
+    svg {
+        width: 60%;
+        height: 60%;
+    }
+    
+    // سایزهای مختلف
+    @each $size-name, $size-value in $sizes {
+        &.#{$size-name} {
+            width: $size-value;
+            height: $size-value;
+            
+            // اگه آیکون سایز خاصی خواستیم بتونیم تنظیمش کنیم
+            svg {
+                width: $size-value * 0.6;
+                height: $size-value * 0.6;
+            }
+        }
+    }
+}
+
+// استایل‌های primary (همون primary خودمون)
+.primary {
+    color: $light;
+    
+    &.blue {
+        background-color: $blue;
+        &:hover {
+            background-color: $blue-dark;
+        }
+    }
+    
+    &.red {
+        background-color: $red;
+        &:hover {
+            background-color: $red-dark;
+        }
+    }
+    
+    &.green {
+        background-color: $green;
+        &:hover {
+            background-color: $green-dark;
+        }
+    }
+    
+    &.yellow {
+        background-color: $yellow;
+        &:hover {
+            background-color: $yellow-dark;
+        }
+    }
+}
+
+// استایل‌های secondary
+.secondary {
+    background-color: transparent;
+    border: 2px solid;
+    
+    &.blue {
+        color: $blue;
+        border-color: $blue;
+        &:hover {
+            background-color: $blue;
+            color: $light;
+        }
+    }
+    
+    &.red {
+        color: $red;
+        border-color: $red;
+        &:hover {
+            background-color: $red;
+            color: $light;
+        }
+    }
+    
+    &.green {
+        color: $green;
+        border-color: $green;
+        &:hover {
+            background-color: $green;
+            color: $light;
+        }
+    }
+    
+    &.yellow {
+        color: $yellow;
+        border-color: $yellow;
+        &:hover {
+            background-color: $yellow;
+            color: $light;
+        }
+    }
+}
