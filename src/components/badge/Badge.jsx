@@ -1,8 +1,9 @@
 import styles from "./Badge.module.scss"
+import {THEME} from "../theme"
 
 const Badge = ({ 
     children, 
-    color = 'blue', 
+    color = THEME, 
     variant = 'standard', 
     size = 'md',
     className = '', 

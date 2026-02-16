@@ -1,6 +1,7 @@
 import styles from "./Tooltip.module.scss"
+import {THEME} from "../theme"
 
-const Tooltip = ({ children, content, position = 'top', color = 'blue', className = '', ...rest }) => {
+const Tooltip = ({ children, content, position = 'top', color = THEME, className = '', ...rest }) => {
     return (
         <div className={`${styles.tooltipContainer} ${className}`} {...rest}>
             {children}

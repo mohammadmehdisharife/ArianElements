@@ -1,8 +1,9 @@
 import styles from "./Progress.module.scss"
+import {THEME} from "../theme"
 
 const Progress = ({ 
     value = 0, 
-    color = 'blue',
+    color = THEME,
     size = 'md',
     className = '',
     ...rest 

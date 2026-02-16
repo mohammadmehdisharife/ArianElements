@@ -2,11 +2,12 @@
 import { useEffect } from 'react';
 import Card from '../card/Card';
 import styles from './Toast.module.scss';
+import {THEME} from "../theme"
 
 const Toast = ({ 
     show, 
     children, 
-    color = 'blue',
+    color = THEME,
     duration = 3000,
     onClose,
     className

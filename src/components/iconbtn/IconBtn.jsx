@@ -1,10 +1,11 @@
 import styles from "./IconBtn.module.scss"
 import { forwardRef } from 'react'
+import {THEME} from "../theme"
 
 const IconBtn = forwardRef(({ 
     children, 
     variant = 'primary', 
-    color = 'blue', 
+    color = THEME, 
     size = 'md',
     className = '', 
     ...rest 

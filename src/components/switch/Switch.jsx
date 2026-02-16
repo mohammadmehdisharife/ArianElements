@@ -1,10 +1,11 @@
 import { useState } from "react"
 import styles from "./Switch.module.scss"
+import {THEME} from "../theme"
 
 const Switch = ({ 
     defaultChecked = false, 
     onChange, 
-    color = 'blue', 
+    color = THEME, 
     size = 'md', 
     className = '', 
     ...rest 
