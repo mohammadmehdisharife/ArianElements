@@ -11,6 +11,7 @@ import Toast from "./components/toast/Toast";
 import Img from "./components/img/Img";
 import Drawer from "./components/drawer/Drawer";
 import Modal from "./components/modal/Modal";
+import Copy from "./components/copy/Cpoy"
 
 // no needed
 import styles from "./App.module.scss";
@@ -123,6 +124,9 @@ const App = () => {
         </div>
       </Modal>
 
+      <Copy text="user_123"> 
+        <Card>روی متن کلیک کن تا کپی بشه</Card>
+      </Copy>
       <br />
       <br />
       <br />

@@ -1,1 +1,1 @@
-export const THEME = "yellow"
+export const THEME = "blue"
