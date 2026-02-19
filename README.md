@@ -9,17 +9,6 @@
 - `ComponentName.jsx` - منطق کامپوننت
 - `ComponentName.scss` - استایل کامپوننت
 
-مثال:
-
-components/
-├── btn/
-│ ├── Btn.jsx
-│ └── Btn.scss
-├── input/
-│ ├── Input.jsx
-│ └── Input.scss
-└── ...
-
 
 ## فایل‌های سراسری
 
