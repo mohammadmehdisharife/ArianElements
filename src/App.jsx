@@ -12,6 +12,7 @@ import Img from "./components/img/Img";
 import Drawer from "./components/drawer/Drawer";
 import Modal from "./components/modal/Modal";
 import Copy from "./components/copy/Cpoy"
+import Carousel from "./components/carousel/Carousel";
 
 // no needed
 import styles from "./App.module.scss";
@@ -23,6 +24,8 @@ const App = () => {
   const [showToast, setShowToast] = useState(false);
   const [showDrawer, setShowDrawer] = useState(false);
   const [showModal, setShowModal] = useState(false);
+
+  const items = ['آیتم ۱', 'آیتم ۲', 'آیتم ۳', 'آیتم ۴', 'آیتم ۵'];
 
   return (
     <div className={styles.container}>
@@ -72,11 +75,11 @@ const App = () => {
         <Text>شما کلیک کردید</Text>
       </Toast>
 
-      <Card className={styles.card}>
+      <Card className={styles.card} style={{ padding: "0px 0px 10px 0px" }} >
         <Img
-          width="200px"
+          width="100%"
           height="100%"
-          src="/logo.png"
+          src="https://thumbs.dreamstime.com/b/red-fox-animal-forest-winter-season-its-surrounding-environment-displaying-rusty-red-color-fur-head-eyes-ears-167935340.jpg"
           objectFit="cover"
         ></Img>
         <Text>کامپوننت عکس</Text>
@@ -107,7 +110,6 @@ const App = () => {
         size="md"
         showCloseButton={true}
       >
-        <div>
           <Card style={{ marginBottom: "15px" }}>
             <Text >اطلاعات</Text>
           </Card>
@@ -121,12 +123,22 @@ const App = () => {
               تایید
             </Btn>
           </div>
-        </div>
       </Modal>
 
       <Copy text="user_123"> 
         <Card>روی متن کلیک کن تا کپی بشه</Card>
       </Copy>
+
+      <Carousel slidesPerView={2} width={"800px"}>
+          <Card className={styles.item} >اولین</Card>
+          <Card className={styles.item} >دومین</Card>
+          <Card className={styles.item} >سومین</Card>
+          <Card className={styles.item} >چهارمین</Card>
+          <Card className={styles.item} >پنجمین</Card>
+          <Card className={styles.item} >اخرین</Card>
+      </Carousel>
+
+
       <br />
       <br />
       <br />
